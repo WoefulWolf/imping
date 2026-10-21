@@ -26,6 +26,8 @@ powershell -ExecutionPolicy Bypass -File scripts/docs.ps1 -Open
 
 Status: early development, not published. Windows x64 only for now.
 
+If imping helped your project, a mention or link back is appreciated. I'd also love to see what you make with it: share it in [Show and tell](https://github.com/WoefulWolf/imping/discussions/categories/show-and-tell), and it might get featured here!
+
 ## License
 
 Licensed under either of
