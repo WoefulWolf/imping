@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>imping docs</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1f2328; --muted: #59636e; --link: #0969da; --bg: #ffffff; --line: #d1d9e0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e6edf3; --muted: #9198a1; --link: #4493f8; --bg: #0d1117; --line: #3d444d; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem; }
+  h1 { margin: 0 0 .25rem; font-size: 2rem; }
+  p { margin: 0 0 2rem; color: var(--muted); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding: .9rem 0; border-top: 1px solid var(--line); }
+  a { color: var(--link); font-family: ui-monospace, monospace; font-size: 1.05rem; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  span { display: block; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>imping</h1>
+  <p>API docs for the imping modding suite. Source: <a href="https://github.com/WoefulWolf/imping">WoefulWolf/imping</a></p>
+  <ul>
+    <li><a href="imping_runtime/index.html">imping_runtime</a><span>What generated bindings call into: module identity checks, globals and hooks.</span></li>
+    <li><a href="imping_hook/index.html">imping_hook</a><span>In-process function hooking: typed detours and code injection.</span></li>
+    <li><a href="imping_build/index.html">imping_build</a><span>Generates bindings from a build script, and the <code>imping</code> CLI.</span></li>
+    <li><a href="imping_codegen/index.html">imping_codegen</a><span>Rust bindings from IR.</span></li>
+    <li><a href="imping_ir/index.html">imping_ir</a><span>The intermediate representation (IR) types and JSON Schema.</span></li>
+  </ul>
+</main>
+</body>
+</html>

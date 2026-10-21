@@ -18,6 +18,12 @@ git clone --recursive https://github.com/WoefulWolf/imping
 
 Each component builds and is versioned on its own, and fetches the others it needs from GitHub. Inside this checkout, `.cargo/config.toml` points them at the local submodules instead, so a change in one is picked up by the others without pushing.
 
+API docs for the Rust crates: https://woefulwolf.github.io/imping/. To build them locally, with links between the crates:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/docs.ps1 -Open
+```
+
 Status: early development, not published. Windows x64 only for now.
 
 ## License
