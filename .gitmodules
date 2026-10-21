@@ -1,0 +1,15 @@
+[submodule "imping-hook"]
+	path = imping-hook
+	url = https://github.com/WoefulWolf/imping-hook.git
+[submodule "imping-ir"]
+	path = imping-ir
+	url = https://github.com/WoefulWolf/imping-ir.git
+[submodule "imping-codegen"]
+	path = imping-codegen
+	url = https://github.com/WoefulWolf/imping-codegen.git
+[submodule "imping-runtime"]
+	path = imping-runtime
+	url = https://github.com/WoefulWolf/imping-runtime.git
+[submodule "imping-ghidra"]
+	path = imping-ghidra
+	url = https://github.com/WoefulWolf/imping-ghidra.git

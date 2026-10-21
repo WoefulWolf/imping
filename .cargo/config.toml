@@ -1,0 +1,11 @@
+# Builds anywhere in this checkout use the local submodules instead of
+# fetching the components from GitHub.
+
+[patch."https://github.com/WoefulWolf/imping-hook"]
+imping-hook = { path = "imping-hook" }
+
+[patch."https://github.com/WoefulWolf/imping-ir"]
+imping-ir = { path = "imping-ir" }
+
+[patch."https://github.com/WoefulWolf/imping-runtime"]
+imping-runtime = { path = "imping-runtime" }
