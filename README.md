@@ -9,7 +9,7 @@ git clone --recursive https://github.com/WoefulWolf/imping
 ## Quick start
 
 1. In Ghidra, name the functions and globals you want, then export the program with [imping-ghidra](https://github.com/WoefulWolf/imping-ghidra) to `target.ir.json`.
-2. Generate bindings from it in your crate's build script:
+2. Generate bindings from it in your crate's build script using [imping-build](https://github.com/WoefulWolf/imping-build):
 
    ```toml
    [dependencies]
@@ -26,7 +26,7 @@ git clone --recursive https://github.com/WoefulWolf/imping
    }
    ```
 
-3. Call and hook the program from your code once it's loaded into the process:
+3. Call and hook the program from your code once it's loaded into the process, using the generated bindings and [imping-runtime](https://github.com/WoefulWolf/imping-runtime):
 
    ```rust
    include!(concat!(env!("OUT_DIR"), "/imped.rs"));
