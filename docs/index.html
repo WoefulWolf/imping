@@ -27,13 +27,8 @@
 <main>
   <header>
     <!-- currentColor, so the logo follows the text colour in light and dark mode. -->
-    <!-- The viewBox is grown by half the stroke, so the outlines end at its edges. -->
-    <svg viewBox="-0.15 -0.15 23.821845 16.688947" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round">
-      <g transform="translate(-83.706625,-119.32826)">
-        <path d="m 100.61608,120.45363 c -0.48622,0.0186 -0.972761,0.0279 -1.459342,0.0279 -2.581558,-2e-5 -5.156416,-0.26268 -7.684802,-0.78393 -2.694685,1.46443 -4.372374,4.28563 -4.372343,7.35253 4.2e-5,4.62148 3.746484,8.36792 8.367965,8.36796 4.621482,-4e-5 8.367922,-3.74648 8.367962,-8.36796 -5e-5,-2.57729 -1.18772,-5.01077 -3.21944,-6.5965 z"/>
-        <path fill="currentColor" stroke-width="0.5" d="m 95.467622,123.39308 a 3.6572963,3.6572963 0 0 0 -3.657115,3.65711 3.6572963,3.6572963 0 0 0 3.657115,3.6575 3.6572963,3.6572963 0 0 0 3.657501,-3.6575 3.6572963,3.6572963 0 0 0 -3.657501,-3.65711 z"/>
-        <path d="m 101.66563,120.39885 a 38.061069,38.061069 0 0 1 -1.04955,0.0548 8.3680363,8.3680363 0 0 1 3.21944,6.5965 8.3680363,8.3680363 0 0 1 -8.367962,8.36796 8.3680363,8.3680363 0 0 1 -8.367965,-8.36796 8.3680363,8.3680363 0 0 1 4.372343,-7.35253 38.061069,38.061069 0 0 1 -0.559139,-0.11937 12.12548,12.12548 0 0 0 -6.956165,7.49515 12.12548,12.12548 0 0 0 11.510926,8.3938 12.12548,12.12548 0 0 0 11.510922,-8.39328 12.12548,12.12548 0 0 0 -5.31285,-6.67505 z"/>
-      </g>
+    <svg viewBox="0 0 256 256" aria-hidden="true" fill="currentColor">
+      <path d="M211.84,134.81l-59.79,60.47,0,0a15.75,15.75,0,0,1-11.2,4.68H75.32L45.66,229.66a8,8,0,0,1-11.32-11.32l22.59-22.58h0L124.7,128H209A4,4,0,0,1,211.84,134.81ZM216.7,30.57a64,64,0,0,0-85.9,4.14l-9.6,9.48A4,4,0,0,0,120,47v63l55-55a8,8,0,0,1,11.31,11.31L140.71,112h88.38a4,4,0,0,0,3.56-2.16A64.08,64.08,0,0,0,216.7,30.57ZM62.83,167.23,104,126.06V70.76a4,4,0,0,0-6.81-2.84L60.69,104A15.9,15.9,0,0,0,56,115.31V164.4A4,4,0,0,0,62.83,167.23Z"/>
     </svg>
     <h1>imping</h1>
   </header>
@@ -47,8 +42,10 @@
   </ul>
 </main>
 <script>
-  // Stretches the logo from the top of the title's highest letter to the bottom of
-  // its lowest. The logo sits on the baseline, so it moves down by the descent.
+  // Sizes the feather, from its top to its straight edge (16 and 200 of the
+  // icon's 256 units), to span the title from its highest letter to the
+  // baseline. The logo's bottom sits on the baseline, so it moves down until
+  // the straight edge does instead; only the stem hangs below, like a "p".
   (() => {
     const title = document.querySelector('h1');
     const logo = document.querySelector('header svg');
@@ -56,8 +53,9 @@
     const context = document.createElement('canvas').getContext('2d');
     context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
     const ink = context.measureText(title.textContent);
-    logo.style.height = `${ink.actualBoundingBoxAscent + ink.actualBoundingBoxDescent}px`;
-    logo.style.top = `${ink.actualBoundingBoxDescent}px`;
+    const unit = ink.actualBoundingBoxAscent / (200 - 16);
+    logo.style.height = `${256 * unit}px`;
+    logo.style.top = `${(256 - 200) * unit}px`;
   })();
 </script>
 </body>
