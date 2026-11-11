@@ -22,9 +22,13 @@ git clone --recursive https://github.com/WoefulWolf/imping
    ```rust
    // build.rs
    fn main() -> Result<(), imping_build::Error> {
-       imping_build::Builder::new("target.ir.json").generate()
+       imping_build::Builder::new()
+           .ir("steam", "target.ir.json")
+           .generate()
    }
    ```
+
+   The label names the build. For several builds of the program, add an `.ir(label, file)` for each: the bindings then work on all of them, and `init()` returns the one that's loaded.
 
 3. Call and hook the program from your code once it's loaded into the process, using the generated bindings and [imping-runtime](https://github.com/WoefulWolf/imping-runtime):
 
